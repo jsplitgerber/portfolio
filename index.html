@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatable" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack Splitgerber</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gtb4agn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.4.8/plyr.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="type/neue-kabel-regular.css">
+    <link rel="stylesheet" href="type/neue-kabel-bold.css">
+    <link rel="stylesheet" href="type/neue-kabel-black.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</head>
+
+
+
+
+
+<body class="neue-kabel-all">
+    <!-- Persistent Header -->
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+
+
+    <!-- Home Section -->
+    <section id="home">
+            <div class="banner">
+                <div class="txt">
+                    <img src="images/hero_txt_title_fg.svg" class="txt-fg">
+                </div>
+                <div class="txt subtitle">cinematographer</div>
+                <div class="txt-blend">
+                    <img src="images/hero_txt_title_bg.svg" class="txt-bg">
+                </div>
+                <img src="images/hero_bg.jpg" class="bg" draggable="false">
+                <img src="images/hero_fg.png" class="fg" draggable="false">
+                <img src="images/hero_fade.png" class="fade" draggable="false">
+            </div>
+    </section>
+
+    <!--OLD HOME-->
+<!--    <section id="home">
+        <div class="title">Jack Splitgerber</div>
+        <div class="subtitle">Cinematographer</div>
+        <img src="images/home_bg.jpg" alt="Your image" class="home-bg" draggable="false">
+         Add your content here -->
+    <!--</section> -->
+
+
+
+    <!-- Portfolio Section -->
+     
+    <section id="portfolio">
+        <div class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="carousel">
+            <div class="carousel-cell">
+                <div class="video-wrapper">
+                    <div class="plyr__video-embed" id="player1">
+                        <iframe
+                        src="https://www.youtube.com/embed/ue97tZa6OAk"
+                        allowfullscreen
+                        allowtransparency
+                        allow="autoplay"
+                      ></iframe>
+                </div>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <div class="video-wrapper">
+                    <div class="plyr__video-embed" id="player2">
+                        <iframe
+                          src="https://player.vimeo.com/video/930549024?background=1?title=0&byline=0&portrait=0&transparent=0"
+                          frameborder="0"
+                          allowfullscreen
+                          allow="autoplay; fullscreen"
+                          playsinline
+                        ></iframe>
+                      </div>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <div class="video-wrapper">
+                    <div class="plyr__video-embed" id="player3">
+                        <iframe
+                          src="https://player.vimeo.com/video/1019685609?background=1?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                          allowfullscreen
+                          allowtransparency
+                          allow="autoplay"
+                        ></iframe>
+                      </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+
+
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
