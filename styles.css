@@ -294,9 +294,9 @@ section {
 
 /* Portfolio Section */
 #portfolio {
-    min-height: 100vh; /* Minimum viewport height */
-    max-height: none; /* Remove previous max-height restriction */
-    overflow-y: auto; /* Allow vertical scrolling if needed */
+    min-height: 100vh;
+    max-height: none;
+    overflow-y: auto;
 }
 #portfolio h2 {
     text-align: center;
@@ -306,7 +306,7 @@ section {
 }
 
 .portfolio {
-    padding: 10vh 0;
+    padding: 85.4px 0;
     overflow: hidden;
 }
 
@@ -375,7 +375,6 @@ section {
     color: inherit;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .the_grid {
         grid-template-columns: 1fr;
@@ -409,36 +408,28 @@ section {
 /* Contact Section */
 #contact {
     color: white;
-    padding: 4rem 2rem;
+    padding: 85.4px 2rem;
+    text-align: center;
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
+#contact h2 {
+    color: #C7B299;
+    font-family: neue_kabelbold;
+    font-size: 32px;
+    padding-bottom: 30px;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border: 1px solid #444;
-    background-color: #333;
+#contact a {
     color: white;
+    text-align: center;
 }
 
-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 0.75rem 2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+#contact a:link, #contact a:visited, #contact a:hover, #contact a:active {
+    text-decoration: none;
 }
 
-button:hover {
-    background-color: #ff6666;
+@media (max-width: 768px) {
+    #contact h2{
+        font-size: 25px;
+    }
 }
