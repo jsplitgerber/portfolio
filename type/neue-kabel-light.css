@@ -1,0 +1,148 @@
+/* Set custom properties for each layout feature */
+:root {
+    --neue-kabel-light-aalt: "aalt" off;
+    --neue-kabel-light-c2sc: "c2sc" off;
+    --neue-kabel-light-case: "case" off;
+    --neue-kabel-light-dlig: "dlig" off;
+    --neue-kabel-light-dnom: "dnom" off;
+    --neue-kabel-light-frac: "frac" off;
+    --neue-kabel-light-lnum: "lnum" off;
+    --neue-kabel-light-numr: "numr" off;
+    --neue-kabel-light-onum: "onum" off;
+    --neue-kabel-light-ordn: "ordn" off;
+    --neue-kabel-light-pnum: "pnum" off;
+    --neue-kabel-light-salt: "salt" off;
+    --neue-kabel-light-sinf: "sinf" off;
+    --neue-kabel-light-smcp: "smcp" off;
+    --neue-kabel-light-ss01: "ss01" off;
+    --neue-kabel-light-ss02: "ss02" off;
+    --neue-kabel-light-ss03: "ss03" off;
+    --neue-kabel-light-ss04: "ss04" off;
+    --neue-kabel-light-ss05: "ss05" off;
+    --neue-kabel-light-ss06: "ss06" off;
+    --neue-kabel-light-ss07: "ss07" off;
+    --neue-kabel-light-ss08: "ss08" off;
+    --neue-kabel-light-ss09: "ss09" off;
+    --neue-kabel-light-ss10: "ss10" off;
+    --neue-kabel-light-ss11: "ss11" off;
+    --neue-kabel-light-ss12: "ss12" off;
+    --neue-kabel-light-ss13: "ss13" off;
+    --neue-kabel-light-ss14: "ss14" off;
+    --neue-kabel-light-ss20: "ss20" off;
+    --neue-kabel-light-subs: "subs" off;
+    --neue-kabel-light-sups: "sups" off;
+    --neue-kabel-light-tnum: "tnum" off;
+    --neue-kabel-light-zero: "zero" off;
+    --neue-kabel-light-cpsp: "cpsp" off;
+}
+
+/* If class is applied, update custom property and
+   apply modern font-variant-* when supported */
+.neue-kabel-light-dlig {
+    --neue-kabel-light-dlig: "dlig" on;
+}
+
+@supports (font-variant-ligatures: discretionary-ligatures) {
+    .neue-kabel-light-dlig {
+        --neue-kabel-light-dlig: "____";
+        font-variant-ligatures: discretionary-ligatures;
+    }
+}
+
+.neue-kabel-light-salt {
+    --neue-kabel-light-salt: "salt" on;
+}
+
+.neue-kabel-light-ss01 {
+    --neue-kabel-light-ss01: "ss01" on;
+}
+
+.neue-kabel-light-ss02 {
+    --neue-kabel-light-ss02: "ss02" on;
+}
+
+.neue-kabel-light-ss04 {
+    --neue-kabel-light-ss04: "ss04" on;
+}
+
+.neue-kabel-light-ss05 {
+    --neue-kabel-light-ss05: "ss05" on;
+}
+
+.neue-kabel-light-ss09 {
+    --neue-kabel-light-ss09: "ss09" on;
+}
+
+.neue-kabel-light-ss11 {
+    --neue-kabel-light-ss11: "ss11" on;
+}
+
+.neue-kabel-light-ss12 {
+    --neue-kabel-light-ss12: "ss12" on;
+}
+
+.neue-kabel-light-ss14 {
+    --neue-kabel-light-ss14: "ss14" on;
+}
+
+.neue-kabel-all {
+    --neue-kabel-light-dlig: "dlig" on;
+    --neue-kabel-light-salt: "salt" on;
+    --neue-kabel-light-ss01: "ss01" on;
+    --neue-kabel-light-ss02: "ss02" on;
+    --neue-kabel-light-ss04: "ss04" on;
+    --neue-kabel-light-ss05: "ss05" on;
+    --neue-kabel-light-ss09: "ss09" on;
+    --neue-kabel-light-ss11: "ss11" on;
+    --neue-kabel-light-ss12: "ss12" on;
+    --neue-kabel-light-ss14: "ss14" on;
+}
+
+@supports (font-variant-ligatures: discretionary-ligatures) {
+    .neue-kabel-all {
+        --neue-kabel-light-dlig: "____";
+        font-variant-ligatures: discretionary-ligatures;
+    }
+}
+
+
+/* Apply current state of all custom properties
+   whenever a class is being applied */
+.neue-kabel-all,
+.neue-kabel-light-aalt,
+.neue-kabel-light-c2sc,
+.neue-kabel-light-case,
+.neue-kabel-light-dlig,
+.neue-kabel-light-dnom,
+.neue-kabel-light-frac,
+.neue-kabel-light-lnum,
+.neue-kabel-light-numr,
+.neue-kabel-light-onum,
+.neue-kabel-light-ordn,
+.neue-kabel-light-pnum,
+.neue-kabel-light-salt,
+.neue-kabel-light-sinf,
+.neue-kabel-light-smcp,
+.neue-kabel-light-ss01,
+.neue-kabel-light-ss02,
+.neue-kabel-light-ss03,
+.neue-kabel-light-ss04,
+.neue-kabel-light-ss05,
+.neue-kabel-light-ss06,
+.neue-kabel-light-ss07,
+.neue-kabel-light-ss08,
+.neue-kabel-light-ss09,
+.neue-kabel-light-ss10,
+.neue-kabel-light-ss11,
+.neue-kabel-light-ss12,
+.neue-kabel-light-ss13,
+.neue-kabel-light-ss14,
+.neue-kabel-light-ss20,
+.neue-kabel-light-subs,
+.neue-kabel-light-sups,
+.neue-kabel-light-tnum,
+.neue-kabel-light-zero,
+.neue-kabel-light-cpsp {
+    font-feature-settings: var(--neue-kabel-light-aalt), var(--neue-kabel-light-c2sc), var(--neue-kabel-light-case), var(--neue-kabel-light-dlig), var(--neue-kabel-light-dnom), var(--neue-kabel-light-frac), var(--neue-kabel-light-lnum), var(--neue-kabel-light-numr), var(--neue-kabel-light-onum), var(--neue-kabel-light-ordn), var(--neue-kabel-light-pnum), var(--neue-kabel-light-salt), var(--neue-kabel-light-sinf), var(--neue-kabel-light-smcp), var(--neue-kabel-light-ss01), var(--neue-kabel-light-ss02), var(--neue-kabel-light-ss03), var(--neue-kabel-light-ss04), var(--neue-kabel-light-ss05), var(--neue-kabel-light-ss06), var(--neue-kabel-light-ss07), var(--neue-kabel-light-ss08), var(--neue-kabel-light-ss09), var(--neue-kabel-light-ss10), var(--neue-kabel-light-ss11), var(--neue-kabel-light-ss12), var(--neue-kabel-light-ss13), var(--neue-kabel-light-ss14), var(--neue-kabel-light-ss20), var(--neue-kabel-light-subs), var(--neue-kabel-light-sups), var(--neue-kabel-light-tnum), var(--neue-kabel-light-zero), var(--neue-kabel-light-cpsp);
+}
+

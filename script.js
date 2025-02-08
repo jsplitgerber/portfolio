@@ -1,19 +1,41 @@
 
 
 
-// Smooth scroll for navigation links
+// Smooth scroll for navigation links on index.html only
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const sectionId = this.getAttribute('href');
-        document.querySelector(sectionId).scrollIntoView({
-            behavior: 'smooth'
-        });
-        
-        // Update URL hash without default jump behavior
-        history.pushState(null, null, sectionId);
+      const href = this.getAttribute('href');
+  
+      // Determine if current page is index.html (or root)
+      const currentPath = window.location.pathname;
+      const isIndexPage =
+        currentPath.endsWith('index.html') ||
+        currentPath === '/' ||
+        currentPath === '/index.html';
+  
+      // Only intercept if we're on index.html
+      if (isIndexPage) {
+        let targetSelector = href;
+        // If the href starts with "index.html", remove it to isolate the hash.
+        if (href.startsWith('index.html')) {
+          targetSelector = href.substring('index.html'.length);
+        }
+        // Proceed only if targetSelector is an in-page hash (starts with '#')
+        if (targetSelector && targetSelector.startsWith('#')) {
+          e.preventDefault();
+          const targetElement = document.querySelector(targetSelector);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+            // Update URL hash without causing an instant jump
+            history.pushState(null, null, targetSelector);
+          }
+        }
+      }
+      // Else, let the browser handle the link normally (for example, on other pages)
     });
-});
+  });
 
 // Handle initial page load with hash in URL
 window.addEventListener('DOMContentLoaded', () => {
@@ -34,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const bg = document.querySelector('.bg');
     const txt = document.querySelector('.txt');
     const txtBlend = document.querySelector('.txt-blend');
-    const subtitle = document.querySelector('.subtitle');
     const fg = document.querySelector('.fg');
 
     window.addEventListener('scroll', () => {
@@ -43,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         bg.style.transform = `translateY(${scrollY * 0.4}px)`;
         txt.style.transform = `translateY(${scrollY * 0.3}px)`;
         txtBlend.style.transform = `translateY(${scrollY * 0.3}px)`;
-        subtitle.style.transform = `translateY(${scrollY * 0.3}px)`;
         fg.style.transform = `translateY(${scrollY * 0.2}px)`;
     });
 });
@@ -52,57 +72,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-//FLICKITY CAROUSEL
-
-// Initialize Flickity
-const carousel = new Flickity('.carousel', {
-    cellAlign: 'center',
-    contain: true,
-    wrapAround: true,
-    lazyLoad: false,
-    pageDots: false,
-    selectedAttraction: 0.01,
-    friction: 0.15,
-});
 
 
 
+//STICKY TITLE FOR SUB-PAGES
 
-
-
-//VIDEO PLAYER
-    // Initialize all players after the YouTube API is ready
-    document.querySelectorAll('.plyr__video-embed').forEach((container) => {
-        const player = new Plyr(container, {
-            ratio: '16:9', // Enforce 16:9 ratio
-          youtube: {
-            noCookie: true,
-            rel: 0,
-            showinfo: 0,
-            iv_load_policy: 3,
-            origin: window.location.origin,
-          },
-          vimeo: {
-            byline: false,
-            portrait: false,
-            title: false,
-            transparent: false,
-            responsive: true
-        },
-        
-          autoplay: false, // Disable autoplay (optional)
-          displayDuration: true,
-          fullscreen: { enabled: true },
-          settings: ['quality'],
-          controls: [
-            'play',
-            'progress',
-            'current-time',
-            'mute',
-            'volume',
-            'settings',
-            'fullscreen'
-          ]
-        });
-      });
-
+document.addEventListener("DOMContentLoaded", function () {
+    const stickySection = document.getElementById("sticky-section");
+    const rightColumn = document.querySelector(".right-column");
+    const offset = rightColumn.offsetTop - 30; // Triggers stickiness 100px sooner
+  
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > offset) {
+        stickySection.classList.add("sticky");
+      } else {
+        stickySection.classList.remove("sticky");
+      }
+    });
+  });
+  

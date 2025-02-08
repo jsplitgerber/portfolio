@@ -1,4 +1,13 @@
-  @font-face {
+@font-face {
+    font-family: 'neue_kabellight';
+    src: url('type/neue_kabel_light.woff') format('woff'),
+         url('type/neue_kabel_light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  
+  }
+
+@font-face {
     font-family: 'neue_kabelregular';
     src: url('type/neue_kabel_regular.woff') format('woff'),
          url('type/neue_kabel_regular.woff2') format('woff2');
@@ -23,13 +32,29 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'squircle_name';
+    src: url('type/squircle_name.woff2') format('woff2'),
+         url('type/squircle_name.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'squircle_name_outline';
+    src: url('type/squircle_name_outline.woff2') format('woff2'),
+         url('type/squircle_name_outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
   
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    /*scroll-behavior: smooth;*/
     font-family: 'neue_kabelregular', "myriad-pro", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     
@@ -48,7 +73,9 @@
 
 
 
-
+html {
+    background-color: #000;
+}
 
 
 
@@ -65,23 +92,50 @@ header {
 
 nav {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: flex-end;
+    gap: 9vw;
+    padding-right: 2vw;
 }
 
 nav a {
-    color: white;
+    color: #c7b299;
+    -webkit-text-stroke-color: #a07857;
+    -webkit-text-stroke-width: 0.06rem;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     font-family: neue_kabelbold;
+    letter-spacing: 0.03rem;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Center-align on mobile */
+@media (max-width: 768px) {
+    nav {
+        justify-content: center;
+        padding: 0 1rem;
+    }
+    
+    /* Optional: Adjust link spacing for mobile */
+    nav a {
+        padding: 0.5rem;
+        font-size: 1.3rem;
+    }
 }
 
 nav a:hover {
-    color: #ff4d4d;
+    transform: scale(1.03);
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
+nav a:active {
+    color: #c7b299;
+    transform: scale(0.9);
+    -webkit-text-stroke-color: #a07857;
+}
+
+ 
 
 
 
@@ -160,13 +214,13 @@ section {
     display: flex;
 }
 
-.txt-fg, .txt-bg {
-    width: 100%; /* Adjust based on your needs */
+/*.txt-fg, .txt-bg {
+    width: 100%;
     height: auto;
     object-fit: contain;
     margin: 0 auto;
     display: block;
-}
+}*/
 
 
 .txt-blend {
@@ -176,18 +230,58 @@ section {
 
 
 .subtitle {
-    font-size: 2vw;
-    padding-left: 25vw;
-    padding-top: 10vw;
+    position: relative;
+    font-size: max(2.6vw, 20px);
+    padding-left: 38.7vw;
+    padding-top: 9.3vw;
     color: #C7B299;
-    letter-spacing: 2pt;
+    letter-spacing: 0.1em;
+    font-family: neue_kabellight;
 }
-/*@media(max-width:1000px){
+
+@media(max-width:687px){
     .subtitle{
-        font-size: 6vw;
+        font-size: 20px;
+        padding-top: 63.5px;
+        padding-left: 266px;
     }
 }
-*/
+
+@media(max-width:597px){
+    .subtitle{
+        font-size: 4vw;
+        padding-left: 40vw;
+        padding-top: 31vw;
+    }
+}
+
+
+
+.hero-title {
+    position: absolute;
+    display: block;
+    font-size: max(11.6vw, 80px);
+    margin-right: 0.43em;
+
+    /*left: 0;
+    padding-left: 6.8vw;*/
+}
+
+.txt-fg {
+    font-family: 'squircle_name_outline';
+    color: #C7B299;
+    text-shadow: .01em .01em .03em rgba(0, 0, 0, 0.75);
+}
+
+.txt-bg {
+    font-family: 'squircle_name';
+    color: #998675;
+}
+
+
+
+
+
 
 
 
@@ -199,11 +293,16 @@ section {
 
 
 /* Portfolio Section */
-
+#portfolio {
+    min-height: 100vh; /* Minimum viewport height */
+    max-height: none; /* Remove previous max-height restriction */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+}
 #portfolio h2 {
     text-align: center;
     color: #C7B299;
     font-family: neue_kabelbold;
+    font-size: 32px;
 }
 
 .portfolio {
@@ -211,48 +310,91 @@ section {
     overflow: hidden;
 }
 
-/* flickity carousel options */
-    .carousel-cell {
-        width: 60vw;
-        margin: 20px;
-        background: #000;
+.the_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    color: white;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.thumbnail-title h3 {
+    font-family: neue_kabellight;
+    font-size: max(1.5vw, 20px);
+    margin-bottom: 0.5rem;
+}
+
+/*.thumbnail-title p {
+    font-family: neue_kabelregular;
+    font-size: 1rem;
+    opacity: 0.8;
+    margin: 0;
+}*/
+
+.grid-item:hover .thumbnail-title h3{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover img{
+    transform: scale(1.03);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.grid-item a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .the_grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
     }
 
-    .carousel .flickity-button {
-        background: transparent;
+    #portfolio h2{
+        font-size: 25px;
     }
+}
 
-/* big previous & next buttons */
-    .flickity-prev-next-button {
-        width: 18vw;
-        height: 34vw;
-        border-radius: 0%;
+@media (max-width: 480px) {
+    .the_grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
     }
-/*Remove button gap from edge of viewport*/
-    .carousel .previous {
-      left: 0;
-    }
-    .carousel .next {
-      right: 0;
-    }
-
-/* icon color */
-    .flickity-button-icon {
-      fill: transparent;
-    }
-
-/*better ratios for smaller screens*/
-    @media(max-width:1000px){
-        .carousel-cell{
-            width: 75vw;
-            margin: 5px;
-        }
-        .flickity-prev-next-button {
-            width: 12vw;
-            height: 43vw;
-        }
-      }
-
+}
 
 
 
@@ -266,7 +408,6 @@ section {
 
 /* Contact Section */
 #contact {
-    background-color: #1a1a1a;
     color: white;
     padding: 4rem 2rem;
 }
