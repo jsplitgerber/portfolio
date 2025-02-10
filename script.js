@@ -13,14 +13,12 @@ document.querySelectorAll('nav a').forEach(anchor => {
         currentPath === '/' ||
         currentPath === '/index.html';
   
-      // Only intercept if we're on index.html
+      // Only intercept if on index.html
       if (isIndexPage) {
         let targetSelector = href;
-        // If the href starts with "index.html", remove it to isolate the hash.
         if (href.startsWith('index.html')) {
           targetSelector = href.substring('index.html'.length);
         }
-        // Proceed only if targetSelector is an in-page hash (starts with '#')
         if (targetSelector && targetSelector.startsWith('#')) {
           e.preventDefault();
           const targetElement = document.querySelector(targetSelector);
@@ -28,12 +26,10 @@ document.querySelectorAll('nav a').forEach(anchor => {
             targetElement.scrollIntoView({
               behavior: 'smooth'
             });
-            // Update URL hash without causing an instant jump
             history.pushState(null, null, targetSelector);
           }
         }
       }
-      // Else, let the browser handle the link normally (for example, on other pages)
     });
   });
 
@@ -50,7 +46,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //PARALLAX SCROLL
-// Add this to script.js
 document.addEventListener('DOMContentLoaded', () => {
     const homeSection = document.getElementById('home');
     const bg = document.querySelector('.bg');
@@ -80,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", function () {
     const stickySection = document.getElementById("sticky-section");
     const rightColumn = document.querySelector(".right-column");
-    const offset = rightColumn.offsetTop - 30; // Triggers stickiness 100px sooner
+    const offset = rightColumn.offsetTop - 30;
   
     window.addEventListener("scroll", function () {
       if (window.scrollY > offset) {

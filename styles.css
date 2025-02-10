@@ -54,7 +54,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*scroll-behavior: smooth;*/
     font-family: 'neue_kabelregular', "myriad-pro", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     
@@ -85,7 +84,6 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    /*background-color: rgba(0, 0, 0, 0.9);*/
     padding: 1rem;
     z-index: 1000;
 }
@@ -117,7 +115,6 @@ nav a {
         padding: 0 1rem;
     }
     
-    /* Optional: Adjust link spacing for mobile */
     nav a {
         padding: 0.5rem;
         font-size: 1.3rem;
@@ -201,9 +198,6 @@ section {
 
 
 .txt, .txt-blend {
-/*    top: 32%;
-    text-align: center;
-    font-size: 5vw;*/
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -214,19 +208,10 @@ section {
     display: flex;
 }
 
-/*.txt-fg, .txt-bg {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-    display: block;
-}*/
-
 
 .txt-blend {
     mix-blend-mode: hard-light;
 }
-
 
 
 .subtitle {
@@ -262,9 +247,6 @@ section {
     display: block;
     font-size: max(11.6vw, 80px);
     margin-right: 0.43em;
-
-    /*left: 0;
-    padding-left: 6.8vw;*/
 }
 
 .txt-fg {
@@ -340,7 +322,7 @@ section {
 
 .thumbnail-title h3 {
     font-family: neue_kabellight;
-    font-size: max(1.5vw, 20px);
+    font-size: 30px;
     margin-bottom: 0.5rem;
 }
 
@@ -375,6 +357,12 @@ section {
     color: inherit;
 }
 
+@media (max-width: 1499px) {
+    .thumbnail-title h3 {
+        font-size: 2vw
+    }
+}
+
 @media (max-width: 768px) {
     .the_grid {
         grid-template-columns: 1fr;
@@ -384,6 +372,10 @@ section {
 
     #portfolio h2{
         font-size: 25px;
+    }
+
+    .thumbnail-title h3 {
+        font-size: 4vw;
     }
 }
 
