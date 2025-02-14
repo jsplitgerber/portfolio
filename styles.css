@@ -290,7 +290,7 @@ section {
 }
 #portfolio h2 {
     text-align: center;
-    color: #C7B299;
+    color: #a07857;
     font-family: neue_kabelbold;
     font-size: 32px;
 }
@@ -324,7 +324,6 @@ section {
     background: linear-gradient(transparent, rgba(0,0,0,0.9));
     color: white;
     transform: translateY(0);
-    transition: all 0.3s ease;
     z-index: 1;
 }
 
@@ -332,6 +331,7 @@ section {
     font-family: neue_kabellight;
     font-size: 30px;
     margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 /*.thumbnail-title p {
@@ -413,7 +413,7 @@ section {
 }
 
 #contact h2 {
-    color: #C7B299;
+    color: #a07857;
     font-family: neue_kabelbold;
     font-size: 32px;
     padding-bottom: 40px;
