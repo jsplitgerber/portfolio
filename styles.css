@@ -221,12 +221,18 @@ section {
     mix-blend-mode: hard-light;
 }
 
+.hero-title {
+    position: absolute;
+    display: block;
+    font-size: max(11.6vw, 80px);
+    margin-right: 0.43em;
+}
 
 .subtitle {
     position: relative;
     font-size: max(2.6vw, 20px);
     padding-left: 38.7vw;
-    padding-top: 9.3vw;
+    padding-top: 10vw;
     color: #C7B299;
     letter-spacing: 0.1em;
     font-family: neue_kabellight;
@@ -235,8 +241,9 @@ section {
 @media(max-width:687px){
     .subtitle{
         font-size: 20px;
-        padding-top: 63.5px;
+        padding-top: 68.5px;
         padding-left: 266px;
+        transition: all 0.1s ease;
     }
 }
 
@@ -246,16 +253,12 @@ section {
         padding-left: 40vw;
         padding-top: 31vw;
     }
+    .hero-title{
+        font-size: 19vw;
+        padding-left: 0.35vw;
+    }
 }
 
-
-
-.hero-title {
-    position: absolute;
-    display: block;
-    font-size: max(11.6vw, 80px);
-    margin-right: 0.43em;
-}
 
 .txt-fg {
     font-family: 'squircle_name_outline';
